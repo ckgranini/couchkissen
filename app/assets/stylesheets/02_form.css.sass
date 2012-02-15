@@ -1,0 +1,38 @@
+label
+  display: block
+  margin: 12px 0 5px
+  font-size: 15px
+
+.form
+  font-size: 12px
+
+  input[type="text"], input[type="email"], input[type="password"], textarea
+    width: 100%
+
+  input[type="text"], input[type="email"], input[type="password"], textarea, select
+    box-sizing: border-box
+    -moz-box-sizing: border-box
+    -webkit-box-sizing: border-box
+    appearance: none
+    -moz-appearance: none
+    -o-appearance: none
+    -webkit-appearance: none
+    padding: 5px
+    background: #DFDDDB
+    border-radius: 4px
+    box-shadow: 0 0 2px 1px #38393D inset, 0 0 0 0 #38393D
+    transition-property: box-shadow, background
+    -moz-transition-property: box-shadow, background
+    -webkit-transition-property: box-shadow, background
+    -o-transition-property: box-shadow, background
+    transition-duration: 0.3s
+    -moz-transition-duration: 0.3s
+    -webkit-transition-duration: 0.3s
+    -o-transition-duration: 0.3s
+    &:focus
+      background: #F2F2F2
+      box-shadow: 0 0 0 0 #38393D inset, 0 0 2px 1px #38393D
+  
+  .check_box label
+    display: inline-block
+    

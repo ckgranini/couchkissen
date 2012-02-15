@@ -1,0 +1,22 @@
+%article
+  .date
+    %p= l @event.datetime, format: :custom
+  .main.btlr0
+    %header
+      %small
+        - if authorized?(@event.user)
+          = link_to t("links.edit"), edit_event_path(@event)
+          = link_to t("links.delete"), @event, method: :delete, confirm: t("messages.confirm_delete")
+        -else
+          = @event.user.name
+      %h3= @event.title
+    %section
+      %p= @event.info
+      = render @event.members
+    %footer.ta-right
+      - if exist?
+        = link_to t("links.leave"), event_member_path(@event), method: :delete, :class => "button"
+      - else
+        = link_to t("links.join"), event_members_path(@event), method: :post, :class => "button"
+= render "posts/new"
+= render @event.posts

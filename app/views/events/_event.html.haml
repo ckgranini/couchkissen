@@ -1,0 +1,15 @@
+%article
+  .date
+    %p= l event.datetime, format: :custom
+  .main.btlr0
+    %header
+      %small
+        - if authorized?(event.user)
+          = link_to t("links.edit"), edit_event_path(event)
+          = link_to t("links.delete"), event, method: :delete, confirm: t("messages.confirm_delete")
+        -else
+          = event.user.name
+      %h3= link_to event.title, event
+    %section
+      %p= event.info
+    %footer

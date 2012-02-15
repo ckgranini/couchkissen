@@ -1,0 +1,22 @@
+=form_for @user do |f|
+  %ul.form
+    %li
+      = f.label :name
+      = f.text_field :name
+    %li
+      = f.label :first_name
+      = f.text_field :first_name
+    %li
+      = f.label :last_name
+      = f.text_field :last_name
+    %li
+      = f.label :email
+      = f.email_field :email
+    %li
+      = f.label :b_date
+      = f.date_select :b_date, start_year: 1980, end_year: 2000, include_blank: true
+    %li
+      = f.label :password
+      = f.password_field :password
+    %li.ta-right
+      = f.submit :class => "button"

@@ -1,0 +1,16 @@
+=form_for @event do |f|
+  %ul.form
+    %li
+      = f.label :title
+      = f.text_field :title
+    %li
+      = f.label :datetime
+      = f.time_select :datetime, :minute_step => 15
+    %li
+      = f.label :datetime
+      = f.date_select :datetime, :start_year => Time.now.year, :end_year => Time.now.year + 1
+    %li
+      = f.label :info
+      = f.text_area :info, :rows => 4
+    %li.ta-right
+      = f.submit :class => "button"

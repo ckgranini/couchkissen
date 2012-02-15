@@ -1,0 +1,6 @@
+= form_for [@postable, @post] do |f|
+  %ul.form
+    %li
+      = f.text_area :content, :rows => 4
+    %li.ta-right
+      = f.submit :class => "button"
