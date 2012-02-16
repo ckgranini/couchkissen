@@ -1,3 +1,5 @@
+@import compass/css3
+
 body
   background: #fff url("data:image/jpeg;base64,/9j/4AAQSkZJRgABAQEASABIAAD//gATQ3JlYXRlZCB3aXRoIEdJTVD/2wBDAAUDBAQEAwUEBAQFBQUGBwwIBwcHBw8LCwkMEQ8SEhEPERETFhwXExQaFRERGCEYGh0dHx8fExciJCIeJBweHx7/2wBDAQUFBQcGBw4ICA4eFBEUHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh7/wAARCABAAEADASIAAhEBAxEB/8QAGQAAAwEBAQAAAAAAAAAAAAAAAQIDAAQI/8QAMxAAAgIBAgQFAgQFBQAAAAAAAQIDEQASITFBUWETInGBkQSxMjOh0RQjQlLBQ1OCkuH/xAAZAQADAAMAAAAAAAAAAAAAAAAAAQIDBQb/xAAfEQACAgICAwEAAAAAAAAAAAAAAREhMfACEkFR8WH/2gAMAwEAAhEDEQA/APOCWpaRYZVJpQyx0AfQEfreEt9OyFQv07LQ3Kum/etskIz4bOImJG+uE0ur1/xmLtZMjfUEDc6X1qxPXNLB3XaEFlCJ5IJY46vxAVex22H3ycbB2LiSeq/MKBiK78VGGQoraxHGhNmxLv6Dp74oO58Q254iZSfL0sbnKIeRpVYuZjGH3tpC2pL9hlYSDH5EIVeUTBnce+6/GTQlXLaXEl2BDJagdx/7jkxSuSxieULuZAfw9BpNH4xMpfgxWICVvKnU3rk914e+T1ofODHvQFREC+mngThDsqkqsZAF2AVA32vnfvmAY02uUjc2Yw6XyNn9sAIy0SSdMdbrp3UepH7YEiJGoK/W4wdN9b3+2MaZNQDBBdEqCT35f5wAMAxFgni+mth1XK8GNq5CwMR1HQtjZrPnPuKOIQyWAZkXa2/F+2MXveNNJeq8M7t7E7emGFa8y6kVTvIov5F7YYCJdAjClhp81i1jjJBPc2MuxVWCrLGyodx4duD/AMhvk5GZUIMrfzCW1VSsOg6D1zaXJXVG+heAk3VR0255LLVUt3fZQa6C1OpF2xstXULy+Tk2bzFmWNWJvXrp677c/TGRkVGJVHvYAF/N3F++KjaRqBEY/wByOwYxfCid/TGKQA6m1FodV0HcH7Vw9sOlDYCq10F8RyDq6jhthBkChoxMFA0hvHoHrROIxJDESF1qgzVIQv3GACuGdmDyayN3DybAjp1zEqjahQPBHY0pvjw4++WhiZw1l2Vf9RFUgH+3jmlhZJNXhzAkbltMQrpvsMJWA6OJJiXdiJBFuAXC0W7VwrLRJGQF/hnVtX5ZkrX3F/a85lptkLMEFlWa1Hfl+mViMagOQCu+i2JUn04j5waDhyu936UnMluGdmIoMXkH/W+XD9MiCjNemh1jNBRy1Ctz3yrqAlSRsqHYUga/U8x3xGjOsqFVpABYYMET54YkPlMmoOd0QEjUR4YtR1ABrAxBuQsxPMpHpFdLHD4y8cErKHVPq2W9QeMLZPIahheOVirlZQzHYv8AUKzL1obYSh9XGDnDjXamJ2BqnW6XuTttjIb8sPitNwDKSpK864jFltV0SNMgIvTI+7HltRyZDVRaUr+IksQo7bcccEPk0y8rG1LWou4lmu+5vh84y+KaId5JGsE0NFdCeHvkomelanZTtqJC71sCN9u+VCtFqWctA5XZA1l+gNmgMTRac2TJSMkK5Vv7ValXuD/UMa9Ip5kIXdFKLp9RRykiTlVKJHDQoLrLM3HhvXPtnOieU7xICdRNkt6atxfrjVkuU8bvw//Z")
   font-family: Consolas, Georgia, serif
@@ -21,6 +23,7 @@ article, nav ul
   article, nav ul
     width: 40%
 
+
 .button
   display: inline-block
   font: normal 12px "Consolas", Georgia, serif
@@ -29,26 +32,18 @@ article, nav ul
   padding: 5px 8px
   text-shadow: 0 1px 1px rgba(255, 255, 255, 0.5)
   background: #B6BBC6
-  background: linear-gradient(#B6BBC6 0%, #8F929B 100%)
-  background: -moz-linear-gradient(#B6BBC6 0%, #8F929B 100%)
-  background: -webkit-linear-gradient(#B6BBC6 0%, #8F929B 100%)
-  background: -o-linear-gradient(#B6BBC6 0%, #8F929B 100%)
-  box-shadow: 0 1px 1px rgba(255, 255, 255, 0.8) inset, 1px 1px 3px rgba(0, 0, 0, 0.3), 0 0 0 4px rgba(120, 120, 120, 0.2)
+  +background-image(linear-gradient(#B6BBC6, #8F929B))
+  +box-shadow(0 1px 1px rgba(255, 255, 255, 0.8) inset, 1px 1px 3px rgba(0, 0, 0, 0.3), 0 0 0 4px rgba(120, 120, 120, 0.2))
   border: 1px solid #686970
   border-radius: 18px
-  -moz-transition: all 0.3s linear
-  -webkit-transition: all 0.3s linear
-  -o-transition: all 0.3s linear
+  +transition(0.3s linear)
   cursor: pointer
 
 .button:hover, .button:focus
   color: #f4f4f4
   text-shadow: 0 1px 1px rgba(0, 0, 0, 0.6)
-  box-shadow: 0 1px 1px rgba(255, 255, 255, 0.8) inset, 1px 1px 3px rgba(0, 0, 0, 0.2)
+  +box-shadow(0 1px 1px rgba(255, 255, 255, 0.8) inset, 1px 1px 3px rgba(0, 0, 0, 0.2))
 
 .button:active
   background: #808389
-  background: linear-gradient(#808389 0%, #808389 100%)
-  background: -moz-linear-gradient(#808389 0%, #808389 100%)
-  background: -webkit-linear-gradient(#808389 0%, #808389 100%)
-  background: -o-linear-gradient(#808389 0%, #808389 100%)
+  +background-image(linear-gradient(#808389, #808389))

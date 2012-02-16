@@ -1,14 +1,10 @@
+@import compass/css3
+
 nav
   background: #323232
-  background: -moz-linear-gradient(top,  #323232 0%, #323232 50%, #272727 57%, #282828 100%)
-  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#323232), color-stop(50%,#323232), color-stop(57%,#272727), color-stop(100%,#282828))
-  background: -webkit-linear-gradient(top,  #323232 0%,#323232 50%,#272727 57%,#282828 100%)
-  background: -o-linear-gradient(top,  #323232 0%,#323232 50%,#272727 57%,#282828 100%)
-  background: -ms-linear-gradient(top,  #323232 0%,#323232 50%,#272727 57%,#282828 100%)
-  background: linear-gradient(top,  #323232 0%,#323232 50%,#272727 57%,#282828 100%)
-  box-shadow: 0 3px 5px #222
-  -webkit-box-shadow: 0 3px 5px #222
+  +background-image(linear-gradient(#323232, #323232 50%, #272727 57%, #282828))
   border-top: 1px solid #d4d4d4
+  +box-shadow(0 3px 5px #222)
 
   ul
     margin: 0 auto
@@ -17,19 +13,13 @@ nav
     overflow: hidden
 
   li
-    box-sizing: border-box
-    -moz-box-sizing: border-box
-    -webkit-box-sizing: border-box
+    +box-sizing(border-box)
     float: left
     width: 25%
     border-left: 1px solid #808080
     border-right: 1px solid #404040
     &:hover
-      background: -moz-radial-gradient(center, ellipse cover,  rgba(120,0,0,1) 0%, rgba(40,40,40,0.28) 72%, rgba(40,40,40,0) 100%)
-      background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%,rgba(120,0,0,1)), color-stop(72%,rgba(40,40,40,0.28)), color-stop(100%,rgba(40,40,40,0)))
-      background: -webkit-radial-gradient(center, ellipse cover,  rgba(120,0,0,1) 0%,rgba(40,40,40,0.28) 72%,rgba(40,40,40,0) 100%)
-      background: -o-radial-gradient(center, ellipse cover,  rgba(120,0,0,1) 0%,rgba(40,40,40,0.28) 72%,rgba(40,40,40,0) 100%)
-      background: radial-gradient(center, ellipse cover,  rgba(120,0,0,1) 0%,rgba(40,40,40,0.28) 72%,rgba(40,40,40,0) 100%)
+      +background-image(radial-gradient(rgba(120,0,0,1), rgba(40,40,40,0.3) 70%, rgba(40,40,40,0)))
   
   a
     color: #fff
