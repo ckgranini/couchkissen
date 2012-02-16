@@ -11,31 +11,28 @@ article
 article, nav ul
   width: 95%
 
-@media only screen and (min-width: 481px)
-  article, nav ul
-    width: 75%
-
-@media only screen and (min-width: 801px)
-  article, nav ul
-    width: 60%
-
-@media only screen and (min-width: 1281px)
-  article, nav ul
-    width: 40%
-
 table
   margin-top: 5px
+  margin-left: 20px
 
 tr
   line-height: 20px
 
 th
   width: 80px
+  padding-right: 5px
   text-align: left
   font-size: 11px
 
 td
   min-width: 200px
+
+.profil-img
+  display: none
+  margin: 5px 10px
+  float: left
+  width: 75px
+  +box-shadow(2px 3px 2px #222)
 
 .button
   display: inline-block
@@ -60,3 +57,24 @@ td
 .button:active
   background: #808389
   +background-image(linear-gradient(#808389, #808389))
+
+@media only screen and (min-width: 481px)
+  article, nav ul
+    width: 85%
+
+  .profil-img
+    display: block
+
+@media only screen and (min-width: 801px)
+  article, nav ul
+    width: 60%
+
+  .profil-img
+    display: block
+
+@media only screen and (min-width: 1281px)
+  article, nav ul
+    width: 40%
+
+  .profil-img
+    display: block
