@@ -4,6 +4,7 @@ Ck::Application.routes.draw do
   get 'login' => 'sessions#new', :as => :login
   get 'logout' => 'sessions#destroy', :as => :logout
   post 'check' => 'sessions#create', :as => :check
+  get 'profil' => 'users#show', :as => :account
 
   resources :users
 

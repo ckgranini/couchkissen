@@ -2,9 +2,8 @@
   .main
     %header
       - if authorized?(user)
-        %small
-          = link_to t("links.edit"), edit_user_path(user)
-      %h3.bbc= link_to user.name, user
+        %small= link_to t("links.edit"), edit_user_path(user)
+      %h3= link_to user.name, user
     %section
       %table
         - unless user.first_name.blank?
@@ -14,22 +13,21 @@
               = user.first_name
               = user.last_name
         - unless user.b_date.blank?
-          %tr  
+          %tr
             %th Geburtstag:
             %td= l user.b_date
         - unless user.phone_home.blank?
           %tr
-            %th Telefon:
+            %th Festnetz:
             %td
               = user.phone_home
         - unless user.mobile.blank?
           %tr
-            %th Smartphone:
+            %th Mobil:
             %td
               = user.mobile
         - unless user.email.blank?
-          %tr 
+          %tr
             %th Email:
             %td
               = user.email
-    %footer

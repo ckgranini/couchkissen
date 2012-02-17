@@ -3,10 +3,11 @@ class UsersController < ApplicationController
   before_filter :check_authorization, :only => [:edit, :update, :destroy]
 
   def index
-    @users = User.all
+    @users = User.order("first_name")
   end
 
   def show
+    params[:id] ||= current_user.id
     @user = User.find(params[:id])
   end
 

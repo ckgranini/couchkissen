@@ -1,6 +1,6 @@
 %article
   .main.pl20
-    %header
+    %header.no-bs
       %small
         - if authorized?(forum.user)
           = link_to t("links.edit"), edit_forum_path(forum)

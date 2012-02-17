@@ -2,7 +2,32 @@
   .main
     %header
       - if authorized?(@user)
-        %small
-          = link_to t("links.edit"), edit_user_path(@user)
+        %small= link_to t("links.edit"), edit_user_path(@user)
       %h3= @user.name
-    %footer
+    %section
+      %table
+        - unless @user.first_name.blank?
+          %tr
+            %th Name:
+            %td
+              = @user.first_name
+              = @user.last_name
+        - unless @user.b_date.blank?
+          %tr
+            %th Geburtstag:
+            %td= l @user.b_date
+        - unless @user.phone_home.blank?
+          %tr
+            %th Festnetz:
+            %td
+              = @user.phone_home
+        - unless @user.mobile.blank?
+          %tr
+            %th Mobil:
+            %td
+              = @user.mobile
+        - unless @user.email.blank?
+          %tr
+            %th Email:
+            %td
+              = @user.email
