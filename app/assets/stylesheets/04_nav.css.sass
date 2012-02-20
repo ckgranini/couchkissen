@@ -5,6 +5,7 @@ nav
   +background-image(linear-gradient(#323232, #323232 50%, #272727 57%, #282828))
   border-top: 1px solid #d4d4d4
   +box-shadow(0 3px 5px #222)
+  text-transform: uppercase
 
   ul
     margin: 0 auto
@@ -18,8 +19,24 @@ nav
     width: 25%
     border-left: 1px solid #808080
     border-right: 1px solid #404040
+    ul
+      position: absolute
+      border: none
+    ul li
+      border: none
+      display: none
+      +background-image(linear-gradient(#323232, #323232 50%, #272727 57%, #282828))
+      float: none
     &:hover
       +background-image(radial-gradient(rgba(120,0,0,1), rgba(40,40,40,0.3) 70%, rgba(40,40,40,0)))
+    &:hover ul li
+      display: block
+      +background-image(linear-gradient(#323232, #323232 50%, #272727 57%, #282828))
+      a:hover
+        color: red
+      &:last-child
+        border-radius: 0 0 7px 7px
+    
   
   a
     color: #fff
@@ -27,3 +44,4 @@ nav
     text-align: center
     font-size: 16px
     padding: 10px 10px
+    cursor: pointer
