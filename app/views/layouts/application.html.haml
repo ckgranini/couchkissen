@@ -15,9 +15,10 @@
         %li= link_to "Forum", forums_path
         %li= link_to "Profile", users_path
         %li
-          %a= "Mehr"
-          %ul
-            %li= link_to "Neues Event", new_event_path
-            %li= link_to "Neues Thema", new_forum_path
-            %li= link_to "Mein Profil", account_path
+          %a#mehr= "Mehr"
+      %ul#sub-nav.hide
+        %li= link_to "Neues Event", new_event_path
+        %li= link_to "Neues Thema", new_forum_path
+        %li= link_to "Mein Profil", account_path
+        %li= link_to "Abmelden", logout_path
     = yield
