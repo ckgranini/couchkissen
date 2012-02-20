@@ -8,20 +8,22 @@ nav
 
   ul
     margin: 0 auto
-    border-right: 1px solid #808080
-    border-left: 1px solid #404040
+    border-right: 1px dotted #808080
+    border-left: 1px dotted #808080
     overflow: hidden
+    
 
   li
     +box-sizing(border-box)
     float: left
     width: 25%
-    border-left: 1px solid #808080
-    border-right: 1px solid #404040
+    border-right: 1px dotted #808080
     &:hover
       +background-image(radial-gradient(rgba(120,0,0,1), rgba(40,40,40,0.3) 70%, rgba(40,40,40,0)))
-    
-  
+    &:last-child
+      border: none
+
+
   a
     color: #fff
     display: block
@@ -31,4 +33,4 @@ nav
     cursor: pointer
 
   #sub-nav
-    border-top: 1px solid #d4d4d4
+    border-top: 1px dotted #808080
