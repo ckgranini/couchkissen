@@ -1,10 +1,11 @@
 %article
-  .main
+  .main.clearfix
     %header
       - if authorized?(user)
         %small= link_to t("links.edit"), edit_user_path(user)
       %h3= link_to user.name, user
     %section
+      .profil-img{id: "pic-#{user.id}"}
       %table
         - unless user.first_name.blank?
           %tr

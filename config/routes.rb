@@ -1,5 +1,6 @@
 Ck::Application.routes.draw do
-  root :to => 'events#index'
+
+  root :to => 'pages#index'
 
   get 'login' => 'sessions#new', :as => :login
   get 'logout' => 'sessions#destroy', :as => :logout
@@ -7,6 +8,7 @@ Ck::Application.routes.draw do
   get 'profil' => 'users#show', :as => :account
 
   resources :users
+  resources :pages
 
   resources :forums do
     resources :posts

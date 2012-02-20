@@ -2,7 +2,7 @@
   .date
     %p= l @event.datetime, format: :custom
   .main.btlr0
-    %header
+    %header.no-bs
       %small
         - if authorized?(@event.user)
           = link_to t("links.edit"), edit_event_path(@event)
