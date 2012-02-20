@@ -3,7 +3,7 @@ class EventsController < ApplicationController
   before_filter :check_authorization, only: [:edit, :update, :destroy]
 
   def index
-    @events = Event.all
+    @events = Event.order("datetime").where("datetime >= ?", Time.now)
   end
 
   def show

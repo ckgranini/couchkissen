@@ -7,7 +7,9 @@
           = link_to t("links.delete"), polymorphic_path([post.postable, post]), method: :delete, confirm: t("messages.confirm_delete")
       %h3
         = post.user.name
-        / = post.postable.title
+        %span
+          = "-"
+          = post.postable.title
     %section
       %p= post.content
     %footer
