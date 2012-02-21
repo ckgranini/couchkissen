@@ -14,7 +14,7 @@
       %p= @event.info
       = render @event.members
     %footer.ta-right
-      - if exist?
+      - if exist?(@event.id)
         = link_to t("links.leave"), event_member_path(@event), method: :delete, :class => "button"
       - else
         = link_to t("links.join"), event_members_path(@event), method: :post, :class => "button"

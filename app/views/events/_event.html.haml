@@ -12,4 +12,8 @@
       %h3= link_to event.title, event
     %section
       %p= event.info
-    %footer
+    %footer.ta-right
+      - if exist?(event.id)
+        = link_to t("links.leave"), event_member_path(event), method: :delete, :class => "button"
+      - else
+        = link_to t("links.join"), event_members_path(event), method: :post, :class => "button"
