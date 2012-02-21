@@ -1,4 +1,5 @@
 class PostsController < ApplicationController
+  before_filter :require_login
   before_filter :check_authorization, :only => [:edit, :update, :destroy]
 
   def new

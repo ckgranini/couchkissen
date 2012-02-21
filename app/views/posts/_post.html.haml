@@ -11,5 +11,4 @@
           = "-"
           = link_to post.postable.title, polymorphic_path(post.postable)
     %section
-      %p= post.content
-    %footer
+      = markdown(post.content)

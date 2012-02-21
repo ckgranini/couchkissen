@@ -11,10 +11,6 @@ article
 article, nav ul, h2
   width: 95%
 
-table
-  margin-top: 5px
-  margin-left: 20px
-
 tr
   line-height: 20px
 
@@ -25,12 +21,12 @@ th
   font-size: 11px
 
 td
-  min-width: 200px
+  min-width: 220px
   font-size: 14px
 
 .profil-img
   display: none
-  margin: 5px 20px 5px 10px
+  margin: 5px 15px 5px 0
   float: left
   width: 75px
   height: 100px
@@ -60,53 +56,7 @@ td
 // #pic-11
 //   background: url("11.jpg") no-repeat
 
-h2
-  font-size: 20px
+.separator
   color: #fff
   margin: 40px auto 15px
-  border-bottom: 1px dotted 
-
-.button
-  display: inline-block
-  font: normal 12px "Consolas", Georgia, serif
-  color: #38393D
-  margin: 15px 0 0
-  padding: 5px 8px
-  text-shadow: 0 1px 1px rgba(255, 255, 255, 0.5)
-  background: #B6BBC6
-  +background-image(linear-gradient(#B6BBC6, #8F929B))
-  +box-shadow(0 1px 1px rgba(255, 255, 255, 0.8) inset, 1px 1px 3px rgba(0, 0, 0, 0.3), 0 0 0 4px rgba(120, 120, 120, 0.2))
-  border: 1px solid #686970
-  border-radius: 18px
-  +transition(0.3s linear)
-  cursor: pointer
-
-.button:hover, .button:focus
-  color: #f4f4f4
-  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.6)
-  +box-shadow(0 1px 1px rgba(255, 255, 255, 0.8) inset, 1px 1px 3px rgba(0, 0, 0, 0.2))
-
-.button:active
-  background: #808389
-  +background-image(linear-gradient(#808389, #808389))
-
-@media only screen and (min-width: 481px)
-  article, nav ul, h2
-    width: 85%
-
-  .profil-img
-    display: block
-
-@media only screen and (min-width: 801px)
-  article, nav ul, h2
-    width: 60%
-
-  .profil-img
-    display: block
-
-@media only screen and (min-width: 1281px)
-  article, nav ul, h2
-    width: 40%
-
-  .profil-img
-    display: block
+  border-bottom: 1px dotted

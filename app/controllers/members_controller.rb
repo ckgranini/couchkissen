@@ -1,4 +1,5 @@
 class MembersController < ApplicationController
+  before_filter :require_login
 
   def create
     @member = event.members.new(params[:member])
