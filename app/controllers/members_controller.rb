@@ -5,9 +5,9 @@ class MembersController < ApplicationController
     @member = event.members.new(params[:member])
     @member.user_id = current_user.id
     if @member.save
-      redirect_to(event)
+      redirect_to event
     else
-      redirect_to(event)
+      redirect_to event
     end
   end
 
@@ -16,7 +16,7 @@ class MembersController < ApplicationController
     if member.destroy
       redirect_to event
     else
-      redirect_to event
+      redirect_to root_path
     end
   end
 

@@ -19,4 +19,4 @@
       - else
         = link_to t("links.join"), event_members_path(@event), method: :post, :class => "button"
 = render "posts/new"
-= render @event.posts
+= render @event.posts  # .order("created_at DESC")
