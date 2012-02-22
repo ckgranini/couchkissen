@@ -11,14 +11,12 @@
       %h1= link_to "Couchkissen", root_path
     %nav
       %ul
-        %li= link_to "Events", events_path
-        %li= link_to "Forum", forums_path
-        %li= link_to "Profile", users_path
+        %li.nav_1.nav= link_to "Events", events_path
+        %li.nav_2.nav= link_to "Neues Event", new_event_path
+        %li.nav_1.nav= link_to "Forum", forums_path
+        %li.nav_2.nav= link_to "Neues Thema", new_forum_path
+        %li.nav_1.nav= link_to "Profile", users_path
+        %li.nav_2.nav= link_to "Mein Profil", account_path
         %li
-          %a#mehr= "Mehr"
-      %ul#sub-nav.hide
-        %li= link_to "Neues Event", new_event_path
-        %li= link_to "Neues Thema", new_forum_path
-        %li= link_to "Mein Profil", account_path
-        %li= link_to "Videos", logout_path
+          %a#next ▼
     = yield

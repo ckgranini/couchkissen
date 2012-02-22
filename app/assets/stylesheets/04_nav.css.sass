@@ -8,21 +8,18 @@ nav
 
   ul
     margin: 0 auto
-    border-right: 1px dotted #808080
-    border-left: 1px dotted #808080
     overflow: hidden
-    
 
   li
     +box-sizing(border-box)
     float: left
-    width: 25%
-    border-right: 1px dotted #808080
+    width: 30%
+    +box-shadow(1px 0 0 0 #111111, 2px 0 1px 0 #898989)
     &:hover
       +background-image(radial-gradient(rgba(120,0,0,1), rgba(40,40,40,0.3) 70%, rgba(40,40,40,0)))
+    &:first-child
     &:last-child
-      border: none
-
+      width: 10%
 
   a
     color: #fff
@@ -31,6 +28,3 @@ nav
     font-size: 16px
     padding: 10px 10px
     cursor: pointer
-
-  #sub-nav
-    border-top: 1px dotted #808080
