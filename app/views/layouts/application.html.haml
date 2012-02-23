@@ -13,10 +13,13 @@
       %ul
         %li.nav_1.nav= link_to "Events", events_path
         %li.nav_2.nav= link_to "Neues Event", new_event_path
+        %li.nav_3.nav= link_to "Videos", root_path
         %li.nav_1.nav= link_to "Forum", forums_path
         %li.nav_2.nav= link_to "Neues Thema", new_forum_path
+        %li.nav_3.nav= link_to "Datenbank", root_path
         %li.nav_1.nav= link_to "Profile", users_path
         %li.nav_2.nav= link_to "Mein Profil", account_path
+        %li.nav_3.nav= link_to "Abmelden", logout_path
         %li
           %a#next ▼
     = yield

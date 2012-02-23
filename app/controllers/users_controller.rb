@@ -3,7 +3,7 @@ class UsersController < ApplicationController
   before_filter :check_authorization, :only => [:edit, :update, :destroy]
 
   def index
-    @users = User.order("first_name")
+    @users = User.order("updated_at DESC")
   end
 
   def show

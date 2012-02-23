@@ -3,5 +3,5 @@
     %header.no-bs
       %h3= @forum.title
 
-= render @forum.posts
 = render "posts/new"
+= render @forum.posts.order("created_at DESC")

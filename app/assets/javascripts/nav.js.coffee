@@ -1,9 +1,11 @@
 $ ->
-  $(".nav_2").hide()
+  array = [".nav_1",".nav_2",".nav_3"]
+  i = 0
+  $(".nav").hide()
+  $(array[i]).show()
   $("nav").on "click", "#next", ->
-    $(".nav a").fadeToggle()
-    $(".nav").toggle()
-    if $(this).text() == "▼"
-      $(this).text("▲")
-    else
-      $(this).text("▼")
+    $(array[i]).hide()
+    i++
+    if i == array.length
+        i = 0
+    $(array[i]).show()
