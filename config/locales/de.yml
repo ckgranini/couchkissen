@@ -49,3 +49,5 @@ de:
     password: 'Passwort'
     remember_me: 'Angemeldet bleiben'
     login: 'Anmelden'
+    time: 'Uhrzeit'
+    date: 'Datum'

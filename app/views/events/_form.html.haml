@@ -8,10 +8,10 @@
       = f.label :title
       = f.text_field :title
     %li
-      = f.label :datetime
+      = f.label :datetime, t("text.time")
       = f.time_select :datetime, :minute_step => 15
     %li
-      = f.label :datetime
+      = f.label :datetime, t("text.date")
       = f.date_select :datetime, :start_year => Time.now.year, :end_year => Time.now.year + 1
     %li
       = f.label :info
