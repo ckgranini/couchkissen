@@ -1,7 +1,6 @@
 $ ->
   array = [".nav_1",".nav_2",".nav_3"]
   i = 0
-  $(".nav").hide()
   $(array[i]).show()
   $("nav").on "click", "#next", ->
     $(array[i]).hide()
