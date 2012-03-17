@@ -9,6 +9,7 @@ Ck::Application.routes.draw do
 
   resources :users
   resources :pages
+  resources :videos
 
   resources :forums do
     resources :posts

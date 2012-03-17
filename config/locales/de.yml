@@ -17,6 +17,11 @@ de:
   users:
     edit:
       title: 'Profil bearbeiten'
+  videos:
+    edit:
+      title: 'Video bearbeiten'
+    new:
+      title: 'Neues Video'
   activerecord:
     models:
       forum: 'Thema'
@@ -37,6 +42,8 @@ de:
         b_date: 'Geburtstag'
         password_digest: 'Passwort'
         password: 'Passwort'
+      video:
+        video_url: 'Video Url'
   links:
     edit: 'ändern'
     delete: 'löschen'

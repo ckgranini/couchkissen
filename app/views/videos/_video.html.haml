@@ -1,0 +1,14 @@
+- video_feed = get_video_feed(video)
+%article
+  .main
+    %header
+      %small
+        - if authorized?(video.user)
+          = link_to t("links.edit"), edit_video_path(video)
+          = link_to t("links.delete"), video, method: :delete, confirm: t("messages.confirm_delete")
+        -else
+          = video.user.name
+      %h3= link_to video_feed["data"]["title"], video_feed["data"]["player"]["default"]
+    %section.clearfix
+      .thumb= link_to image_tag(video_feed["data"]["thumbnail"]["sqDefault"]), video_feed["data"]["player"]["default"]
+      %p= truncate(video_feed["data"]["description"], :length => 70)

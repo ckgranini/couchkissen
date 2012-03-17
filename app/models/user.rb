@@ -6,6 +6,7 @@ class User < ActiveRecord::Base
   before_create {generate_token(:auth_token)}
 
   has_many :events
+  has_many :videos
   has_many :comments
   has_many :events, :through => :members
 
