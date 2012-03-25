@@ -7,6 +7,7 @@ class User < ActiveRecord::Base
 
   has_many :events
   has_many :videos
+  has_many :movies
   has_many :comments
   has_many :events, :through => :members
 

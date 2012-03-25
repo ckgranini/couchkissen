@@ -1,0 +1,11 @@
+=form_for @movie do |f|
+  - if @movie.errors.any?
+    %ul
+      - @movie.errors.full_messages.each do |msg|
+        %li= msg
+  %ul.form
+    %li
+      = f.label :tmdb_id
+      = f.text_field :tmdb_id
+    %li.ta-right
+      = f.submit :class => "button"

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120316205338) do
+ActiveRecord::Schema.define(:version => 20120322093510) do
 
   create_table "events", :force => true do |t|
     t.string   "title"
@@ -36,6 +36,19 @@ ActiveRecord::Schema.define(:version => 20120316205338) do
     t.integer  "user_id"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
+  end
+
+  create_table "movies", :force => true do |t|
+    t.string   "title"
+    t.text     "plot"
+    t.string   "poster_id"
+    t.string   "trailer_url"
+    t.string   "tmdb_url"
+    t.string   "tmdb_id"
+    t.string   "imdb_id"
+    t.integer  "user_id"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
   end
 
   create_table "posts", :force => true do |t|
