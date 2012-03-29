@@ -22,11 +22,17 @@ de:
       title: 'Video bearbeiten'
     new:
       title: 'Neues Video'
+  movies:
+    edit:
+      title: 'Film bearbeiten'
+    new:
+      title: 'Neuer Film'
   activerecord:
     models:
       forum: 'Thema'
       post: 'Beitrag'
       user: 'Profil'
+      movie: 'Film'
     attributes:
       event:
         title: 'Titel'
@@ -44,6 +50,11 @@ de:
         password: 'Passwort'
       video:
         video_url: 'Video Url'
+      movie:
+        tmdb_id: 'Tmdb ID'
+        title: 'Titel'
+        poster_id: 'Poster ID'
+        trailer_url: 'Trailer Url'
   links:
     edit: 'ändern'
     delete: 'löschen'
