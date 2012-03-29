@@ -8,18 +8,22 @@
     %meta{:name => 'viewport', :content => 'width=device-width, initial-scale=1.0'}
   %body
     #head
-      %h1= link_to "Couchkissen", root_path
-    %nav
-      %ul.clearfix
-        %li.nav_1.nav= link_to "Events", events_path
-        %li.nav_2.nav= link_to "Neues Event", new_event_path
-        %li.nav_3.nav= link_to "Videos", videos_path
-        %li.nav_1.nav= link_to "Forum", forums_path
-        %li.nav_2.nav= link_to "Neues Thema", new_forum_path
-        %li.nav_3.nav= link_to "Datenbank", root_path
-        %li.nav_1.nav= link_to "Profile", users_path
-        %li.nav_2.nav= link_to "Mein Profil", account_path
-        %li.nav_3.nav= link_to "Abmelden", logout_path
-        %li
-          %a#next ▼
+      %nav
+        %h1= link_to "Couchkissen", root_path
+        .btn-grp
+          = link_to "Events", events_path, class: "btn"
+          = link_to "+", new_event_path, class: "btn"
+        .btn-grp
+          = link_to "Forum", forums_path, class: "btn"
+          = link_to "+", new_forum_path, class: "btn"
+        .btn-grp
+          = link_to "Filme", root_path, class: "btn"
+          = link_to "+", root_path, class: "btn"
+        .btn-grp
+          = link_to "Videos", videos_path, class: "btn"
+          = link_to "+", new_video_path, class: "btn"
+        .btn-grp
+          = link_to "Profile", users_path, class: "btn"
+          = link_to "Mein Profil", account_path, class: "btn"
     = yield
+    %script document.write('<script src="http://' + (location.host || 'localhost').split(':')[0] + ':35729/livereload.js?snipver=1"></' + 'script>')
