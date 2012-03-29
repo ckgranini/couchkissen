@@ -1,32 +1,45 @@
 @import compass/css3
 
 nav
-  background: #323232
-  +background-image(linear-gradient(#323232, #323232 50%, #272727 57%, #282828))
-  border-top: 1px solid #d4d4d4
-  +box-shadow(0 3px 5px #222)
+  margin: 0 auto
+  text-align: center
 
-  ul
-    margin: 0 auto
+.btn-grp, .btn-single
+  display: inline-block
+  margin: 8px 0
 
-  .nav
-    display: none
+.btn-grp .btn
+  float: left
+  margin-left: -1px
 
-  li
-    +box-sizing(border-box)
-    float: left
-    width: 30%
-    +box-shadow(1px 0 0 0 #111111, 2px 0 0 0 #898989)
-    &:hover
-      +background-image(radial-gradient(rgba(120,0,0,1), rgba(40,40,40,0.3) 70%, rgba(40,40,40,0)))
-    &:last-child
-      +box-shadow(none)
-      width: 10%
+  &:first-child
+    margin-left: 0
+    border-radius: 4px 0 0 4px
+  &:last-child
+    border-radius: 0 4px 4px 0
+    +box-shadow(1px 0 0 rgba(255, 255, 255, 0.125) inset, 0 1px 0 rgba(255, 255, 255, 0.2) inset, 0 1px 2px rgba(0, 0, 0, 0.05))
 
-  a
-    color: #fff
-    display: block
-    text-align: center
-    font-size: 16px
-    padding: 10px 10px
-    cursor: pointer
+.btn-single .btn
+  float: left
+
+.btn
+  display: inline-block
+  position: relative
+  font-size: 14px
+  padding: 9px 12px
+  color: #fff
+  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25)
+  border-style: solid
+  border-width: 1px
+  border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25)
+  border-radius: 4px
+  background-color: #414141
+  +background-image(linear-gradient(center top , #555555, #222222))
+  background-repeat: repeat-x
+  +box-shadow(0 1px 0 rgba(255, 255, 255, 0.2) inset, 0 1px 2px rgba(0, 0, 0, 0.05))
+
+  &:hover
+    +transition(background-position 0.1s linear)
+    background-color: #222222
+    background-position: 0 -15px
+    z-index: 2
