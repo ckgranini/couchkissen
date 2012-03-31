@@ -9,6 +9,8 @@
           = @movie.user.name
       %h3= link_to @movie.title, @movie.tmdb_url
     %section.clearfix
-      .thumb= link_to image_tag("http://cf2.imgobject.com/t/p/w185/" + @movie.poster_id + ".jpg"), "http://cf2.imgobject.com/t/p/w500/" + @movie.poster_id + ".jpg"
+      - unless @movie.poster_id.blank?
+        .thumb= link_to image_tag("http://cf2.imgobject.com/t/p/w185/" + @movie.poster_id + ".jpg"), "http://cf2.imgobject.com/t/p/w500/" + @movie.poster_id + ".jpg"
       %p= @movie.plot
-      %p= link_to "Trailer", @movie.trailer_url unless @movie.trailer_url.blank?
+      - unless @movie.trailer_url.blank?
+        %p= link_to "Trailer", @movie.trailer_url

@@ -55,6 +55,12 @@ de:
         title: 'Titel'
         poster_id: 'Poster ID'
         trailer_url: 'Trailer Url'
+    errors:
+      models:
+        movie:
+          attributes:
+            title:
+              blank: "(Film) wurde nicht gefunden!"
   links:
     edit: 'ändern'
     delete: 'löschen'
