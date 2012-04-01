@@ -6,6 +6,7 @@ Ck::Application.routes.draw do
   get 'logout' => 'sessions#destroy', :as => :logout
   post 'check' => 'sessions#create', :as => :check
   get 'profil' => 'users#show', :as => :account
+  get 'movies/search' => 'search#movies', :as => :search_movies
 
   resources :users
   resources :pages
