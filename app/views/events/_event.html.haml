@@ -13,8 +13,8 @@
     %section
       = markdown(event.info)
       - if event.members.count > 0
-        %h4.mt10 Teilnehmer
-        %p= render event.members
+        %h4.mt10 Teilnehmer:
+        .member-list= render event.members
     %footer.ta-right
       - if exist?(event.id)
         = link_to t("links.leave"), event_member_path(event, event.id), method: :delete, :class => "button"

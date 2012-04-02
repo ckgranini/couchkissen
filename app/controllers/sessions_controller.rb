@@ -4,6 +4,8 @@ class SessionsController < ApplicationController
 
   def create
     user = User.find_by_name(params[:name])
+    user = User.find_by_name(params[:name].capitalize) unless user
+    user = User.find_by_name(params[:name].downcase) unless user
     if user && user.authenticate(params[:password])
       if params[:remember_me]
         cookies.permanent[:auth_token] = user.auth_token
