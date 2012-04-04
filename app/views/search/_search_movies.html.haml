@@ -6,3 +6,10 @@
           = text_field_tag :search, params[:search], :placeholder => "Suche"
         %li.ta-right
           = submit_tag "Suchen", :name => nil, :class => "button"
+      .layout.clearfix
+        %a{href: "/movies"}
+          %span.layout-list
+        %a{href: "/movies?layout=grid&width=1"}
+          %span.layout-grid-small
+        %a{href: "/movies?layout=grid"}
+          %span.layout-grid-large

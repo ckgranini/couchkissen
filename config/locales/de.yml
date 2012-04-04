@@ -47,7 +47,8 @@ de:
         mobile: 'Mobil'
         b_date: 'Geburtstag'
         password_digest: 'Passwort'
-        password: 'Passwort'
+        password: 'Neues Passwort'
+        password_confirmation: 'Neues Passwort bestätigen'
       video:
         video_url: 'Video Url'
       movie:
@@ -73,5 +74,6 @@ de:
     password: 'Passwort'
     remember_me: 'Angemeldet bleiben'
     login: 'Anmelden'
+    change_password: 'Passwort ändern'
     time: 'Uhrzeit'
     date: 'Datum'

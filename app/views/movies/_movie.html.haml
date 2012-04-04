@@ -6,6 +6,3 @@
           = link_to t("links.edit"), edit_movie_path(movie)
           = link_to t("links.delete"), movie, method: :delete, confirm: t("messages.confirm_delete")
       %h3= link_to movie.title, movie
-
-/ %article
-/   = link_to image_tag("http://cf2.imgobject.com/t/p/w92/" + movie.poster_id + ".jpg"), movie
