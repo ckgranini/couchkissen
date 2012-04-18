@@ -4,6 +4,7 @@
       %small
         - if authorized?(@movie.user)
           = link_to t("links.edit"), edit_movie_path(@movie)
+          %span= "|"
           = link_to t("links.delete"), @movie, method: :delete, confirm: t("messages.confirm_delete")
         -else
           = @movie.user.name

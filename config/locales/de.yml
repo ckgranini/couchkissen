@@ -74,6 +74,7 @@ de:
     password: 'Passwort'
     remember_me: 'Angemeldet bleiben'
     login: 'Anmelden'
+    logout: 'abmelden'
     change_password: 'Passwort ändern'
     time: 'Uhrzeit'
     date: 'Datum'

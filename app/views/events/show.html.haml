@@ -6,6 +6,7 @@
       %small
         - if authorized?(@event.user)
           = link_to t("links.edit"), edit_event_path(@event)
+          %span= "|"
           = link_to t("links.delete"), @event, method: :delete, confirm: t("messages.confirm_delete")
         -else
           = @event.user.name

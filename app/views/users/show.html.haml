@@ -2,7 +2,10 @@
   .main
     %header
       - if authorized?(@user)
-        %small= link_to t("links.edit"), edit_user_path(@user)
+        %small
+          = link_to t("links.edit"), edit_user_path(@user)
+          %span= "|"
+          = link_to t("text.logout"), logout_path
       %h3= @user.name
     %section
       %table

@@ -13,10 +13,12 @@ class MembersController < ApplicationController
 
   def destroy
     member = event.members.find_by_user_id(current_user.id)
-    if member.destroy
-      redirect_to event
+    unless member.nil?
+      if member.destroy
+        redirect_to event
+      end
     else
-      redirect_to root_path
+      redirect_to event
     end
   end
 

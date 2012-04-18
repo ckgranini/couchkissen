@@ -4,5 +4,6 @@
       %small
         - if authorized?(forum.user)
           = link_to t("links.edit"), edit_forum_path(forum)
+          %span= "|"
           = link_to t("links.delete"), forum, method: :delete, confirm: t("messages.confirm_delete")
       %h3= link_to forum.title, forum
