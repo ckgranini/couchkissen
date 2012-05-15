@@ -7,8 +7,9 @@
           %span= "|"
           = link_to t("links.delete"), polymorphic_path([post.postable, post]), method: :delete, confirm: t("messages.confirm_delete")
       = link_to post.user.name, user_path(post.user)
+      %time.postable{title: l(post.created_at)}
+        = "- " + time_ago_in_words(post.created_at)
       %span.postable
-        = "-"
-        = link_to post.postable.title, polymorphic_path(post.postable)
+        = link_to "- " + post.postable.title, polymorphic_path(post.postable)
     %section
       = markdown(post.content)

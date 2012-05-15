@@ -1,6 +1,10 @@
-%h2.separator Nächste Events
-= render @events
-%h2.separator Neueste Beiträge
+- if @events.count > 0
+  %article
+    %h3.separator Nächste Events
+  = render @events
+%article
+  %h3.separator Neueste Beiträge
 = render @posts
-%h2.separator Neueste Filme
+%article
+  %h3.separator Neueste Filme
 = render @movies
