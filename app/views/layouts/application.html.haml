@@ -11,18 +11,23 @@
       %nav
         %h1= link_to "Couchkissen", root_path
         .btn-grp
-          = link_to "Events", events_path, class: "btn"
-          = link_to "+", new_event_path, class: "btn"
+          = link_to "", events_path, class: "btn", data: { icon: "!" }
+          = link_to "", new_event_path, class: "btn", data: { icon: "." }
         .btn-grp
-          = link_to "Forum", forums_path, class: "btn"
-          = link_to "+", new_forum_path, class: "btn"
+          = link_to "", forums_path, class: "btn", data: { icon: "'" }
+          = link_to "", new_forum_path, class: "btn", data: { icon: "." }
         .btn-grp
-          = link_to "Filme", movies_path, class: "btn"
-          = link_to "+", new_movie_path, class: "btn"
+          = link_to "", movies_path, class: "btn", data: { icon: "%" }
+          = link_to "", new_movie_path, class: "btn", data: { icon: "." }
         .btn-grp
-          = link_to "Videos", videos_path, class: "btn"
-          = link_to "+", new_video_path, class: "btn"
+          = link_to "", movies_path, class: "btn", data: { icon: "&" }
+          = link_to "", new_movie_path, class: "btn", data: { icon: "." }
         .btn-grp
-          = link_to "Profile", users_path, class: "btn"
-          = link_to "Mein Profil", account_path, class: "btn"
+          = link_to "", videos_path, class: "btn", data: { icon: "$" }
+          = link_to "", new_video_path, class: "btn", data: { icon: "." }
+        .btn-grp
+          = link_to "", users_path, class: "btn", data: { icon: "#" }
+          = link_to "", account_path, class: "btn", data: { icon: "\"" }
+        .btn-single
+          = link_to "", logout_path, class: "btn", data: { icon: "*" }
     = yield
