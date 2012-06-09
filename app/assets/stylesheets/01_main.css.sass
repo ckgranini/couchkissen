@@ -1,5 +1,6 @@
 @import compass/css3
 @import color
+@include font-face("icons", font-files("IcoMoon.ttf"))
 
 body
   background-color: #254d04
@@ -8,6 +9,10 @@ body
   background-attachment: fixed
   font-family: Consolas, Georgia, serif
   overflow-y: scroll
+
+[data-icon]:before
+  font-family: 'icons'
+  content: attr(data-icon)
 
 em
   font-style: italic
@@ -149,4 +154,5 @@ td
     width: 5px
     height: 9px
     left: 7px
+
     top: -5px
