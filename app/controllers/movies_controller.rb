@@ -32,7 +32,7 @@ class MoviesController < ApplicationController
     end
     @movie.user_id = current_user.id
     if @movie.save
-      redirect_to movies_path
+      redirect_to @movie
     else
       render 'new'
     end

@@ -24,7 +24,7 @@ class ForumsController < ApplicationController
     @forum = Forum.new(params[:forum])
     @forum.user_id = current_user.id
     if @forum.save
-      redirect_to forums_path
+      redirect_to @forum
     else
       render 'new'
     end

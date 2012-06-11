@@ -1,9 +1,9 @@
 %article
   .main.pl20
     %header.no-bs
-      %small
-        - if authorized?(forum.user)
-          = link_to t("links.edit"), edit_forum_path(forum)
+      - if forum.posts.count > 0
+        %small
+          %time{title: l(forum.posts.last.created_at)}= "letzter Beitrag " + time_ago_in_words(forum.posts.last.created_at)
           %span= "|"
-          = link_to t("links.delete"), forum, method: :delete, confirm: t("messages.confirm_delete")
+          %span= forum.posts.count
       %h3= link_to forum.title, forum
