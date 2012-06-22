@@ -1,4 +1,5 @@
 class Event < ActiveRecord::Base
+  attr_accessible :title, :datetime, :info
   validates :title, presence:true
   belongs_to :user
   has_many :members

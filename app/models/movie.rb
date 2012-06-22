@@ -1,4 +1,5 @@
 class Movie < ActiveRecord::Base
+  attr_accessible :tmdb_id
   validates :tmdb_id, :title, presence: true, uniqueness: true
   belongs_to :user
 

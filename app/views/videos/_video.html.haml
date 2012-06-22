@@ -5,6 +5,7 @@
       %small
         - if authorized?(video.user)
           = link_to t("links.edit"), edit_video_path(video)
+          %span= "|"
           = link_to t("links.delete"), video, method: :delete, confirm: t("messages.confirm_delete")
         -else
           = video.user.name
