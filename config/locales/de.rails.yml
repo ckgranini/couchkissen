@@ -194,4 +194,5 @@ de:
       long: '%A, %d. %B %Y, %H:%M Uhr'
       short: '%d. %B, %H:%M Uhr'
       custom: '%a, %e. %b %H:%M'
+      simple: '%d. %b %Y'
     pm: nachmittags

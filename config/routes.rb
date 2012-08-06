@@ -7,6 +7,7 @@ Ck::Application.routes.draw do
   post 'check' => 'sessions#create', :as => :check
   get 'profil' => 'users#show', :as => :account
   get 'movies/search' => 'search#movies', :as => :search_movies
+  get 'events/archive' => 'events#archive', :as => :events_archive
 
   resources :users
   resources :pages

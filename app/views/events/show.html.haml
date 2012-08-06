@@ -14,7 +14,9 @@
     %section
       = markdown(@event.info)
       - if @event.members.count > 0
-        %h4.mt10 Teilnehmer:
+        %h4.mt10
+          = @event.members.count
+          = "Teilnehmer:"
         .member-list= render @event.members
     %footer.ta-right
       - if exist?(@event.id)
@@ -22,4 +24,6 @@
       - else
         = link_to t("links.join"), event_members_path(@event), method: :post, :class => "button"
 = render "posts/new"
-= render @event.posts.order("created_at DESC")
+= render @posts
+%article
+  = will_paginate @posts, :class => 'main ta-center', :inner_window => 3

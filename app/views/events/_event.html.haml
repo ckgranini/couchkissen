@@ -14,7 +14,9 @@
     %section
       = markdown(event.info)
       - if event.members.count > 0
-        %h4.mt10 Teilnehmer:
+        %h4.mt10
+          = event.members.count
+          = "Teilnehmer:"
         .member-list= render event.members
     %footer.ta-right
       - if exist?(event.id)

@@ -10,6 +10,7 @@ class ForumsController < ApplicationController
     @forum = Forum.find(params[:id])
     @postable = @forum
     @post = Post.new
+    @posts = @forum.posts.paginate(:page => params[:page]).order("created_at DESC")
   end
 
   def new

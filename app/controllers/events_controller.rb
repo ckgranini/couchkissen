@@ -3,13 +3,14 @@ class EventsController < ApplicationController
   before_filter :check_authorization, only: [:edit, :update, :destroy]
 
   def index
-    @events = Event.order("datetime").where("datetime > ?", Time.now.midnight)
+    @events = Event.where("datetime > ?", Time.now.midnight).order("datetime")
   end
 
   def show
     @event = Event.find(params[:id])
     @postable = @event
     @post = Post.new
+    @posts = @event.posts.paginate(:page => params[:page]).order("created_at DESC")
   end
 
   def new
@@ -44,6 +45,10 @@ class EventsController < ApplicationController
     if @event.destroy
       redirect_to events_path
     end
+  end
+
+  def archive
+    @events = Event.paginate(:page => params[:page]).order("datetime DESC")
   end
 
   private

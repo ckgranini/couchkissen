@@ -9,4 +9,6 @@
       %h3= @forum.title
 
 = render "posts/new"
-= render @forum.posts.order("created_at DESC")
+= render @posts
+%article
+  = will_paginate @posts, :class => 'main ta-center', :inner_window => 3

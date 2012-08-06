@@ -1,0 +1,9 @@
+- @events.each do |event|
+  %article
+    .main.pl20
+      %header.no-bs
+        %small{title: l(event.datetime)}
+          = l event.datetime, format: :simple
+        %h3= link_to event.title, event
+%article
+  = will_paginate @events, :class => 'main ta-center', :inner_window => 3

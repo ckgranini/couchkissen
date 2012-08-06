@@ -78,3 +78,7 @@ de:
     change_password: 'Passwort ändern'
     time: 'Uhrzeit'
     date: 'Datum'
+  will_paginate:
+    previous_label: '<<'
+    next_label: '>>'
+    page_gap: '&hellip;'

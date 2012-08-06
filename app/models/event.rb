@@ -5,4 +5,6 @@ class Event < ActiveRecord::Base
   has_many :members
   has_many :posts, as: :postable, dependent: :delete_all
   has_many :users, :through => :members
+
+  self.per_page = 12
 end
