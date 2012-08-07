@@ -48,7 +48,7 @@ class EventsController < ApplicationController
   end
 
   def archive
-    @events = Event.paginate(:page => params[:page]).order("datetime DESC")
+    @events = Event.where("datetime < ?", Time.now.midnight).paginate(:page => params[:page]).order("datetime DESC")
   end
 
   private
