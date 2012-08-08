@@ -27,12 +27,18 @@ de:
       title: 'Film bearbeiten'
     new:
       title: 'Neuer Film'
+  polls:
+    edit:
+      title: 'Abstimmung bearbeiten'
+    new:
+      title: 'Neue Abstimmung'
   activerecord:
     models:
       forum: 'Thema'
       post: 'Beitrag'
       user: 'Profil'
       movie: 'Film'
+      poll: 'Abstimmung'
     attributes:
       event:
         title: 'Titel'
@@ -56,6 +62,10 @@ de:
         title: 'Titel'
         poster_id: 'Poster ID'
         trailer_url: 'Trailer Url'
+      poll:
+        title: 'Titel'
+      selection:
+        title: 'Auswahlmöglichkeit'
     errors:
       models:
         movie:

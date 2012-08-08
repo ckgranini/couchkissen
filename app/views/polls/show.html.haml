@@ -1,0 +1,21 @@
+%article
+  .main.pl20
+    %header.no-bs
+      %small
+        - if authorized?(@poll.user)
+          = link_to t("links.edit"), edit_poll_path(@poll)
+          %span= "|"
+          = link_to t("links.delete"), @poll, method: :delete, confirm: t("messages.confirm_delete")
+        - else
+          = @poll.user.name
+      %h3= @poll.title
+    %section
+      = markdown(@poll.info)
+
+%article
+  .main
+    %section
+      - if has_voted?(params[:id])
+        = render @poll.selections
+      - else
+        = render 'votes/form'

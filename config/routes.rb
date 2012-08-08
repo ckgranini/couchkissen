@@ -22,4 +22,9 @@ Ck::Application.routes.draw do
     resources :members
     resources :posts
   end
+
+  resources :polls do
+    resources :selections
+    resources :votes
+  end
 end

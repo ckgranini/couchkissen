@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120322093510) do
+ActiveRecord::Schema.define(:version => 20120807100017) do
 
   create_table "events", :force => true do |t|
     t.string   "title"
@@ -51,6 +51,15 @@ ActiveRecord::Schema.define(:version => 20120322093510) do
     t.datetime "updated_at",  :null => false
   end
 
+  create_table "polls", :force => true do |t|
+    t.string   "title"
+    t.text     "info"
+    t.datetime "datetime_end"
+    t.integer  "user_id"
+    t.datetime "created_at",   :null => false
+    t.datetime "updated_at",   :null => false
+  end
+
   create_table "posts", :force => true do |t|
     t.text     "content"
     t.integer  "postable_id"
@@ -58,6 +67,13 @@ ActiveRecord::Schema.define(:version => 20120322093510) do
     t.integer  "user_id"
     t.datetime "created_at",    :null => false
     t.datetime "updated_at",    :null => false
+  end
+
+  create_table "selections", :force => true do |t|
+    t.string   "title"
+    t.integer  "poll_id"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
   end
 
   create_table "users", :force => true do |t|
@@ -79,6 +95,14 @@ ActiveRecord::Schema.define(:version => 20120322093510) do
     t.integer  "user_id"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
+  end
+
+  create_table "votes", :force => true do |t|
+    t.integer  "poll_id"
+    t.integer  "selection_id"
+    t.integer  "user_id"
+    t.datetime "created_at",   :null => false
+    t.datetime "updated_at",   :null => false
   end
 
 end
