@@ -3,7 +3,7 @@ class ForumsController < ApplicationController
   before_filter :check_authorization, :only => [:edit, :update, :destroy]
 
   def index
-    @forums = Forum.order("title")
+    @forums = Forum.all(:include => :posts, :order => "posts.created_at DESC")
   end
 
   def show
