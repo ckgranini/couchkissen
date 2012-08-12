@@ -12,10 +12,16 @@
     %section
       = markdown(@poll.info)
 
-%article
-  .main
-    %section
-      - if has_voted?(params[:id])
+- if has_voted?(params[:id])
+  %article
+    .main
+      %header.no-bs
+        %small
+          = link_to t("links.edit"), edit_poll_vote_path(@poll)
+          %span= "|"
+          = link_to t("links.delete"), poll_vote_path(@poll), method: :delete, confirm: t("messages.confirm_delete")
+        %h3= "Ergbnis"
+      %section
         = render @poll.selections
-      - else
-        = render 'votes/form'
+- else
+  = render 'votes/new'

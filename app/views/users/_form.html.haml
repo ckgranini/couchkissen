@@ -25,14 +25,14 @@
     %li
       = f.label :b_date
       = f.date_select :b_date, start_year: 1980, end_year: 2000, include_blank: true
-    %li
-      %label
-        = t("text.change_password")
-    %li
-      = f.label :password
-      = f.password_field :password
-    %li
-      = f.label :password_confirmation
-      = f.password_field :password_confirmation
+        
+    %fieldset
+      %legend= t("text.change_password")
+      %li
+        = f.label :password
+        = f.password_field :password
+      %li
+        = f.label :password_confirmation
+        = f.password_field :password_confirmation
     %li.ta-right
       = f.submit :class => "button"

@@ -32,6 +32,11 @@ de:
       title: 'Abstimmung bearbeiten'
     new:
       title: 'Neue Abstimmung'
+  votes:
+    edit:
+      title: 'Abstimmung bearbeiten'
+    new:
+      title: 'Abstimmung'
   activerecord:
     models:
       forum: 'Thema'
@@ -77,6 +82,7 @@ de:
     delete: 'löschen'
     join: 'nehme Teil'
     leave: 'nehme nicht Teil'
+    vote: 'abstimmen'
   messages:
     confirm_delete: 'wirklich löschen?'
   text:
@@ -88,6 +94,8 @@ de:
     change_password: 'Passwort ändern'
     time: 'Uhrzeit'
     date: 'Datum'
+    selections: 'Auswahlmöglichkeiten'
+    add_selection: 'Auswahlmöglichkeit hinzufügen'
   will_paginate:
     previous_label: '<<'
     next_label: '>>'

@@ -12,6 +12,30 @@ class VotesController < ApplicationController
     end
   end
 
+  def edit
+    @vote = poll.votes.find_by_user_id(current_user.id)
+  end
+
+  def update
+    @vote = poll.votes.find_by_user_id(current_user.id)
+    if @vote.update_attributes(params[:vote])
+      redirect_to poll
+    else
+      render 'edit'
+    end
+  end
+
+  def destroy
+    vote = poll.votes.find_by_user_id(current_user.id)
+    unless vote.nil?
+      if vote.destroy
+        redirect_to poll
+      end
+    else
+      redirect_to poll
+    end
+  end
+
   private
 
   def poll

@@ -5,4 +5,4 @@
         = f.radio_button :selection_id, s.id
         = f.label :selection_id, s.title, value: s.id
     %li.ta-right
-      = f.submit :class => "button"
+      = submit_tag t("links.vote"), :class => "button"

@@ -1,3 +1,4 @@
-%li
-  = f.label :title
+%li.pos-rel
+  = f.hidden_field :_destroy
+  = link_to "", '#', class: "remove_fields", data: { icon: "\ue009" }
   = f.text_field :title

@@ -10,7 +10,10 @@
     %li
       = f.label :info
       = f.text_area :info, :rows => 4
-    = f.fields_for :selections do |selection_form|
-      = render 'selection', f: selection_form
+    %fieldset
+      %legend= t "text.selections"
+      = f.fields_for :selections do |selection_form|
+        = render 'selection', f: selection_form
+      = link_to_add_fields t("text.add_selection"), f, :selections
     %li.ta-right
       = f.submit :class => "button"

@@ -5,5 +5,5 @@ class Poll < ActiveRecord::Base
   has_many :selections, dependent: :delete_all
   has_many :votes, :through => :selections, dependent: :delete_all
 
-  accepts_nested_attributes_for :selections, :allow_destroy => true
+  accepts_nested_attributes_for :selections, :reject_if => lambda { |a| a[:title].blank? }, :allow_destroy => true
 end
