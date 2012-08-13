@@ -1,9 +1,6 @@
 %article
   .main.pl20
     %header.no-bs
-      - if forum.posts.count > 0
-        %small
-          %time{title: l(forum.posts.last.created_at)}= "letzter Beitrag " + time_ago_in_words(forum.posts.last.created_at)
-          %span= "|"
-          %span= forum.posts.count
+      %small
+        = t :post_count, count: forum.posts.count
       %h3= link_to forum.title, forum
