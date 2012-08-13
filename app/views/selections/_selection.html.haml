@@ -1,3 +1,3 @@
-%p
-  = selection.title
-  = selection.votes.count
+- if selection.votes.count > 0
+  %label= selection.title
+  .graph{ data: { value: number_to_percentage(100.00 / @poll.votes.count * selection.votes.count) } }

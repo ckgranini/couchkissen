@@ -20,8 +20,8 @@
           = link_to t("links.edit"), edit_poll_vote_path(@poll)
           %span= "|"
           = link_to t("links.delete"), poll_vote_path(@poll), method: :delete, confirm: t("messages.confirm_delete")
-        %h3= "Ergbnis"
       %section
-        = render @poll.selections
+        .chart
+          = render @poll.selections
 - else
   = render 'votes/new'

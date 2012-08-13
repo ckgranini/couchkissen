@@ -179,6 +179,7 @@ de:
     percentage:
       format:
         delimiter: ''
+        precision: 0
     precision:
       format:
         delimiter: ''
