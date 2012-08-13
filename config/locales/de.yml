@@ -82,3 +82,7 @@ de:
     previous_label: '<<'
     next_label: '>>'
     page_gap: '&hellip;'
+  post_count:
+    zero: 'keine Beiträge'
+    one: '1 Beitrag'
+    other: '%{count} Beiträge'
