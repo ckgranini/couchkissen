@@ -25,3 +25,7 @@
           = render @poll.selections
 - else
   = render 'votes/new'
+= render "posts/new"
+= render @posts
+%article
+  = will_paginate @posts, :class => 'main ta-center', :inner_window => 3

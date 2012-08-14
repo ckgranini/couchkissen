@@ -9,6 +9,9 @@ class PollsController < ApplicationController
   def show
     @poll = Poll.find(params[:id])
     @vote = Vote.new
+    @postable = @poll
+    @post = Post.new
+    @posts = @poll.posts.paginate(:page => params[:page]).order("created_at DESC")
   end
 
   def new

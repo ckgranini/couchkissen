@@ -26,5 +26,6 @@ Ck::Application.routes.draw do
   resources :polls do
     resources :selections
     resources :votes
+    resources :posts
   end
 end
