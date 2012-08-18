@@ -1,8 +1,8 @@
 = form_for [@poll, @vote] do |f|
-  %ul.form
+  .form
     - @poll.selections.each do |s|
-      %li.radio_button
+      .radio_button
         = f.radio_button :selection_id, s.id
         = f.label :selection_id, s.title, value: s.id
-    %li.ta-right
+    .ta-right
       = submit_tag t("links.vote"), :class => "button"

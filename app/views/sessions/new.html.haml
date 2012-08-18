@@ -2,15 +2,13 @@
   .main
     %section
       = form_tag check_path do
-        %ul.form
-          %li
-            = label_tag :name, t("text.name")
-            = text_field_tag :name, params[:name]
-          %li
-            = label_tag :password, t("text.password")
-            = password_field_tag :password
-          %li.check_box
+        .form
+          = label_tag :name, t("text.name")
+          = text_field_tag :name, params[:name]
+          = label_tag :password, t("text.password")
+          = password_field_tag :password
+          .check_box
             = check_box_tag :remember_me, 1, params[:remember_me]
             = label_tag :remember_me, t("text.remember_me")
-          %li.ta-right
+          .ta-right
             = submit_tag t("text.login"), :class => "button"

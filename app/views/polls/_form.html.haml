@@ -3,17 +3,15 @@
     %ul
       - @poll.errors.full_messages.each do |msg|
         %li= msg
-  %ul.form
-    %li
-      = f.label :title
-      = f.text_field :title
-    %li
-      = f.label :info
-      = f.text_area :info, :rows => 4
+  .form
+    = f.label :title
+    = f.text_field :title
+    = f.label :info
+    = f.text_area :info, :rows => 4
     %fieldset
       %legend= t "text.selections"
       = f.fields_for :selections do |selection_form|
         = render 'selection', f: selection_form
       = link_to_add_fields t("text.add_selection"), f, :selections
-    %li.ta-right
+    .ta-right
       = f.submit :class => "button"

@@ -3,36 +3,27 @@
     %ul
       - @user.errors.full_messages.each do |msg|
         %li= msg
-  %ul.form
-    %li
-      = f.label :name
-      = f.text_field :name
-    %li
-      = f.label :first_name
-      = f.text_field :first_name
-    %li
-      = f.label :last_name
-      = f.text_field :last_name
-    %li
-      = f.label :phone_home
-      = f.text_field :phone_home, placeholder: "04639-12345"
-    %li
-      = f.label :mobile
-      = f.text_field :mobile, placeholder: "0170-1234567"
-    %li
-      = f.label :email
-      = f.email_field :email
-    %li
-      = f.label :b_date
-      = f.date_select :b_date, start_year: 1980, end_year: 2000, include_blank: true
-        
+  .form
+    = f.label :name
+    = f.text_field :name
+    = f.label :first_name
+    = f.text_field :first_name
+    = f.label :last_name
+    = f.text_field :last_name
+    = f.label :phone_home
+    = f.text_field :phone_home, placeholder: "04639-12345"
+    = f.label :mobile
+    = f.text_field :mobile, placeholder: "0170-1234567"
+    = f.label :email
+    = f.email_field :email
+    = f.label :b_date
+    = f.date_select :b_date, start_year: 1980, end_year: 2000, include_blank: true
+
     %fieldset
       %legend= t("text.change_password")
-      %li
-        = f.label :password
-        = f.password_field :password
-      %li
-        = f.label :password_confirmation
-        = f.password_field :password_confirmation
-    %li.ta-right
+      = f.label :password
+      = f.password_field :password
+      = f.label :password_confirmation
+      = f.password_field :password_confirmation
+    .ta-right
       = f.submit :class => "button"

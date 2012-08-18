@@ -3,18 +3,14 @@
     %ul
       - @movie.errors.full_messages.each do |msg|
         %li= msg
-  %ul.form
-    %li
-      = f.label :title
-      = f.text_field :title
-    %li
-      = f.label :plot
-      = f.text_area :plot, :rows => 10
-    %li
-      = f.label :poster_id
-      = f.text_field :poster_id
-    %li
-      = f.label :trailer_url
-      = f.text_field :trailer_url
-    %li.ta-right
+  .form
+    = f.label :title
+    = f.text_field :title
+    = f.label :plot
+    = f.text_area :plot, :rows => 10
+    = f.label :poster_id
+    = f.text_field :poster_id
+    = f.label :trailer_url
+    = f.text_field :trailer_url
+    .ta-right
       = f.submit :class => "button"

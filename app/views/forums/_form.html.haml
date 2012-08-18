@@ -3,9 +3,8 @@
     %ul
       - @forum.errors.full_messages.each do |msg|
         %li= msg
-  %ul.form
-    %li
-      = f.label :title
-      = f.text_field :title
-    %li.ta-right
+  .form
+    = f.label :title
+    = f.text_field :title
+    .ta-right
       = f.submit :class => "button"

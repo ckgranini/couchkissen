@@ -1,10 +1,9 @@
 %article
   .main
     = form_tag search_movies_path, :method => "get" do
-      %ul.form
-        %li
-          = text_field_tag :search, params[:search], :placeholder => "Suche"
-        %li.ta-right
+      .form
+        = text_field_tag :search, params[:search], :placeholder => "Suche"
+        .ta-right
           = submit_tag "Suchen", :name => nil, :class => "button"
       .layout.clearfix
         %a{href: "/movies"}

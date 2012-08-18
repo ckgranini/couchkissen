@@ -3,9 +3,8 @@
     %ul
       - @video.errors.full_messages.each do |msg|
         %li= msg
-  %ul.form
-    %li
-      = f.label :video_url
-      = f.text_field :video_url
-    %li.ta-right
+  .form
+    = f.label :video_url
+    = f.text_field :video_url
+    .ta-right
       = f.submit :class => "button"
