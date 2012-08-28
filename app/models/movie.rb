@@ -1,5 +1,5 @@
 class Movie < ActiveRecord::Base
-  attr_accessible :tmdb_id
+  attr_accessible :tmdb_id, :title, :plot, :poster_id, :trailer_url
   validates :tmdb_id, :title, presence: true, uniqueness: true
   belongs_to :user
 
