@@ -1,9 +1,10 @@
 class VideosController < ApplicationController
   before_filter :require_login
+  before_filter :check_authorization, only: [:edit, :update, :destroy]
 
   def index
     @videos = Video.order("created_at DESC")
-    @video = Video.new
+    redis_expire('videos')
   end
 
   def new
@@ -18,6 +19,7 @@ class VideosController < ApplicationController
     @video = Video.new(params[:video])
     @video.user_id = current_user.id
     if @video.save
+      redis_new('videos', @video.id)
       redirect_to videos_path
     else
       render 'new'

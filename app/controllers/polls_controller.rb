@@ -4,6 +4,7 @@ class PollsController < ApplicationController
   
   def index
     @polls = Poll.all
+    redis_expire('polls')
   end
 
   def show
@@ -27,6 +28,7 @@ class PollsController < ApplicationController
     @poll = Poll.new(params[:poll])
     @poll.user_id = current_user.id
     if @poll.save
+      redis_new('polls', @poll.id)
       redirect_to polls_path
     else
       render 'new'

@@ -4,6 +4,7 @@ class EventsController < ApplicationController
 
   def index
     @events = Event.where("datetime > ?", Time.now.midnight).order("datetime")
+    redis_expire('events')
   end
 
   def show
@@ -25,6 +26,7 @@ class EventsController < ApplicationController
     @event = Event.new(params[:event])
     @event.user_id = current_user.id
     if @event.save
+      redis_new('events', @event.id)
       redirect_to events_path
     else
       render 'new'

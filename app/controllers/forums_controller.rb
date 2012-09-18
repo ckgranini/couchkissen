@@ -4,6 +4,7 @@ class ForumsController < ApplicationController
 
   def index
     @forums = Forum.all(:include => :posts, :order => "posts.created_at DESC")
+    redis_expire('forums')
   end
 
   def show
@@ -25,6 +26,7 @@ class ForumsController < ApplicationController
     @forum = Forum.new(params[:forum])
     @forum.user_id = current_user.id
     if @forum.save
+      redis_new('forums', @forum.id)
       redirect_to @forum
     else
       render 'new'
