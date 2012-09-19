@@ -33,7 +33,7 @@ class MoviesController < ApplicationController
     end
     @movie.user_id = current_user.id
     if @movie.save
-      redis_new('movies', @movie.id)
+      redis_create('movies', @movie.id)
       redirect_to @movie
     else
       render 'new'
@@ -43,6 +43,7 @@ class MoviesController < ApplicationController
   def update
     @movie = Movie.find(params[:id])
     if @movie.update_attributes(params[:movie])
+      redis_destroy('movies', @movie.id)
       redirect_to movie_path
     else
       render 'edit'

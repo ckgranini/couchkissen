@@ -8,11 +8,15 @@ module ApplicationHelper
 
   def redis_scard
     notify_counts = Hash.new
-    types = [:events, :forums, :movies, :videos, :polls]
+    types = [:events, :event_posts, :forums, :forum_posts, :movies, :videos, :polls, :poll_posts]
     types.each do |type|
       notify_counts[type] = $redis.scard("user:#{current_user.id}:#{type}")
     end
     notify_counts
+  end
+
+  def redis_scard_posts(type)
+    new_posts_count = $redis.scard("user:#{current_user.id}:#{type}")
   end
 
 end

@@ -19,7 +19,7 @@ class ApplicationController < ActionController::Base
   end
   helper_method :authorized?
 
-  def redis_new(type, id)
+  def redis_create(type, id)
     @users = User.where('id != ?', current_user.id)
     $redis.multi do  
       @users.each do |user|
@@ -28,8 +28,17 @@ class ApplicationController < ActionController::Base
     end
   end
 
+  def redis_destroy(type, id)
+    @users = User.where('id != ?', current_user.id)
+    $redis.multi do  
+      @users.each do |user|
+        $redis.srem("user:#{user.id}:#{type}", id)
+      end
+    end
+  end
+
   def redis_expire(type)
-    $redis.expire("user:#{current_user.id}:#{type}", 5)
+    $redis.expire("user:#{current_user.id}:#{type}", 2)
   end
 
 end

@@ -5,6 +5,7 @@ class EventsController < ApplicationController
   def index
     @events = Event.where("datetime > ?", Time.now.midnight).order("datetime")
     redis_expire('events')
+    redis_expire('event_posts')
   end
 
   def show
@@ -12,6 +13,7 @@ class EventsController < ApplicationController
     @postable = @event
     @post = Post.new
     @posts = @event.posts.paginate(:page => params[:page]).order("created_at DESC")
+    redis_expire("event:#{@event.id}:posts")
   end
 
   def new
@@ -26,7 +28,7 @@ class EventsController < ApplicationController
     @event = Event.new(params[:event])
     @event.user_id = current_user.id
     if @event.save
-      redis_new('events', @event.id)
+      redis_create('events', @event.id)
       redirect_to events_path
     else
       render 'new'
@@ -45,6 +47,7 @@ class EventsController < ApplicationController
   def destroy
     @event = Event.find(params[:id])
     if @event.destroy
+      redis_destroy('events', @event.id)
       redirect_to events_path
     end
   end

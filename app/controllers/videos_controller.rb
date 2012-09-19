@@ -19,7 +19,7 @@ class VideosController < ApplicationController
     @video = Video.new(params[:video])
     @video.user_id = current_user.id
     if @video.save
-      redis_new('videos', @video.id)
+      redis_create('videos', @video.id)
       redirect_to videos_path
     else
       render 'new'
@@ -38,6 +38,7 @@ class VideosController < ApplicationController
   def destroy
     @video = Video.find(params[:id])
     if @video.destroy
+      redis_destroy('videos', @video.id)
       redirect_to videos_path
     end
   end

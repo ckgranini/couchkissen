@@ -1,4 +1,7 @@
-%article
+%article.pos-rel
+  - notify_posts_count = redis_scard_posts("forum:#{forum.id}:posts")
+  - if notify_posts_count > 0
+    %span.badge.badge-post= notify_posts_count
   .main.pl20
     %header.no-bs
       %small

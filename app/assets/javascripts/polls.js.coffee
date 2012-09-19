@@ -1,7 +1,7 @@
 jQuery ->
   $('form').on 'click', '.remove_fields', (event) ->
     $(this).prev('input[type=hidden]').val('1')
-    $(this).closest('li').hide()
+    $(this).closest('div').hide()
     event.preventDefault()
 
   $('form').on 'click', '.add_fields', (event) ->
@@ -11,4 +11,4 @@ jQuery ->
     event.preventDefault()
 
   $('.graph').each ->
-    $(this).width($(this).data('value'))
+    $(this).css('width', $(this).data('value'))
