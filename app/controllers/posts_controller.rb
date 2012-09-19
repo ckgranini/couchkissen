@@ -12,7 +12,6 @@ class PostsController < ApplicationController
     @post = @postable.posts.new(params[:post])
     @post.user_id = current_user.id
     if @post.save
-      redis_create("#{@post.postable_type.downcase}_posts", @post.id)
       redis_create("#{@post.postable_type.downcase}:#{@post.postable.id}:posts", @post.id)
       redirect_to @postable
     else
@@ -39,8 +38,7 @@ class PostsController < ApplicationController
     @postable = find_postable
     post = @postable.posts.find(params[:id])
     if post.destroy
-      redis_destroy("#{post.postable_type.downcase}_posts", post.id)
-      redis_destroy("#{post.postable_type.downcase}:#{post.postable.id}:posts", post.id)
+      redis_rem_all("#{post.postable_type.downcase}:#{post.postable.id}:posts", post.id)
       redirect_to @postable
     end
   end

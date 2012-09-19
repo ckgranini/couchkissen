@@ -4,8 +4,7 @@ class PollsController < ApplicationController
   
   def index
     @polls = Poll.all
-    redis_expire('polls')
-    redis_expire('poll_posts')
+    redis_del('polls')
   end
 
   def show
@@ -14,6 +13,7 @@ class PollsController < ApplicationController
     @postable = @poll
     @post = Post.new
     @posts = @poll.posts.paginate(:page => params[:page]).order("created_at DESC")
+    redis_rem('polls', @poll.id)
     redis_expire("poll:#{@poll.id}:posts")
   end
 
@@ -49,7 +49,8 @@ class PollsController < ApplicationController
   def destroy
     @poll = Poll.find(params[:id])
     if @poll.destroy
-      redis_destroy('polls', @poll.id)
+      redis_del_all("poll:#{@poll.id}:posts")
+      redis_rem_all('polls', @poll.id)
       redirect_to polls_path
     end
   end

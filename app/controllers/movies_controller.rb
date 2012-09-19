@@ -4,11 +4,12 @@ class MoviesController < ApplicationController
 
   def index
     @movies = Movie.order("title")
-    redis_expire('movies')
+    redis_del('movies')
   end
 
   def show
     @movie = Movie.find(params[:id])
+    redis_rem('movies', @movie.id)
   end
 
   def new
@@ -43,7 +44,6 @@ class MoviesController < ApplicationController
   def update
     @movie = Movie.find(params[:id])
     if @movie.update_attributes(params[:movie])
-      redis_destroy('movies', @movie.id)
       redirect_to movie_path
     else
       render 'edit'
@@ -53,6 +53,7 @@ class MoviesController < ApplicationController
   def destroy
     @movie = Movie.find(params[:id])
     if @movie.destroy
+      redis_rem_all('movies', @movie.id)
       redirect_to movies_path
     end
   end

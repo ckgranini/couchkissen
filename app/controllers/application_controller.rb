@@ -28,7 +28,15 @@ class ApplicationController < ActionController::Base
     end
   end
 
-  def redis_destroy(type, id)
+  def redis_expire(type)
+    $redis.expire("user:#{current_user.id}:#{type}", 2)
+  end
+
+  def redis_rem(type, id)
+    $redis.srem("user:#{current_user.id}:#{type}", id)
+  end
+
+  def redis_rem_all(type, id)
     @users = User.where('id != ?', current_user.id)
     $redis.multi do  
       @users.each do |user|
@@ -37,8 +45,17 @@ class ApplicationController < ActionController::Base
     end
   end
 
-  def redis_expire(type)
-    $redis.expire("user:#{current_user.id}:#{type}", 2)
+  def redis_del(type)
+    $redis.del("user:#{current_user.id}:#{type}")
+  end
+
+  def redis_del_all(type)
+    @users = User.where('id != ?', current_user.id)
+    $redis.multi do  
+      @users.each do |user|
+        $redis.del("user:#{user.id}:#{type}")
+      end
+    end
   end
 
 end

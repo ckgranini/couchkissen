@@ -4,7 +4,7 @@ class VideosController < ApplicationController
 
   def index
     @videos = Video.order("created_at DESC")
-    redis_expire('videos')
+    redis_del('videos')
   end
 
   def new
@@ -38,7 +38,7 @@ class VideosController < ApplicationController
   def destroy
     @video = Video.find(params[:id])
     if @video.destroy
-      redis_destroy('videos', @video.id)
+      redis_rem_all('videos', @video.id)
       redirect_to videos_path
     end
   end

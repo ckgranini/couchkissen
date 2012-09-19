@@ -4,8 +4,7 @@ class ForumsController < ApplicationController
 
   def index
     @forums = Forum.all(:include => :posts, :order => "posts.created_at DESC")
-    redis_expire('forums')
-    redis_expire('forum_posts')
+    redis_del('forums')
   end
 
   def show
@@ -13,6 +12,7 @@ class ForumsController < ApplicationController
     @postable = @forum
     @post = Post.new
     @posts = @forum.posts.paginate(:page => params[:page]).order("created_at DESC")
+    redis_rem("forums", @forum.id)
     redis_expire("forum:#{@forum.id}:posts")
   end
 
@@ -47,7 +47,8 @@ class ForumsController < ApplicationController
   def destroy
     @forum = Forum.find(params[:id])
     if @forum.destroy
-      redis_destroy('forums', @forum.id)
+      redis_del_all("forum:#{@forum.id}:posts")
+      redis_rem_all('forums', @forum.id)
       redirect_to forums_path
     end
   end
