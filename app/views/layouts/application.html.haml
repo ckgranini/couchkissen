@@ -9,33 +9,22 @@
   %body
     #head
       %nav
-        - notify_counts = redis_scard
         %h1= link_to "Couchkissen", root_path
         .btn-grp
           = link_to "", events_path, class: "btn", data: { icon: "\ue000" }, title: "Events"
-          - if notify_counts[:events] > 0
-            %span.badge.badge-default= notify_counts[:events]
           = link_to "", events_archive_path, class: "btn", data: { icon: "\ue001" }, title: "Vergangene Events"
           = link_to "", new_event_path, class: "btn", data: { icon: "\ue00b" }, title: "Neues Event"
         .btn-grp
           = link_to "", forums_path, class: "btn", data: { icon: "\ue002" }, title: "Forum"
-          - if notify_counts[:forums] > 0
-            %span.badge.badge-post= notify_counts[:forums]
           = link_to "", new_forum_path, class: "btn", data: { icon: "\ue00b" }, title: "Neues Thema"
         .btn-grp
           = link_to "", movies_path, class: "btn", data: { icon: "\ue003" }, title: "Filme"
-          - if notify_counts[:movies] > 0
-            %span.badge.badge-default= notify_counts[:movies]
           = link_to "", new_movie_path, class: "btn", data: { icon: "\ue00b" }, title: "Neuer Film"
         .btn-grp
           = link_to "", videos_path, class: "btn", data: { icon: "\ue004" }, title: "Videos"
-          - if notify_counts[:videos] > 0
-            %span.badge.badge-default= notify_counts[:videos]
           = link_to "", new_video_path, class: "btn", data: { icon: "\ue00b" }, title: "Neues Video"
         .btn-grp
           = link_to "", polls_path, class: "btn", data: { icon: "\ue007" }, title: "Abstimmungen"
-          - if notify_counts[:polls] > 0
-            %span.badge.badge-default= notify_counts[:polls]
           = link_to "", new_poll_path, class: "btn", data: { icon: "\ue00b" }, title: "Neue Abstimmung"
         .btn-grp
           = link_to "", users_path, class: "btn", data: { icon: "\ue005" }, title: "Profile"

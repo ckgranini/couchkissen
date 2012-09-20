@@ -4,7 +4,6 @@ class MoviesController < ApplicationController
 
   def index
     @movies = Movie.order("title")
-    redis_expire('movies')
   end
 
   def show
@@ -33,7 +32,6 @@ class MoviesController < ApplicationController
     end
     @movie.user_id = current_user.id
     if @movie.save
-      redis_new('movies', @movie.id)
       redirect_to @movie
     else
       render 'new'

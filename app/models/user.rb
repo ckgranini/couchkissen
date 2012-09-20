@@ -12,14 +12,6 @@ class User < ActiveRecord::Base
   has_many :comments
   has_many :events, :through => :members
 
-  def visit(field)
-    $redis.hset(self.redis_key('visit'), field, Time.now)
-  end
-
-  def redis_key(str)
-    "user:#{self.id}:#{str}"
-  end
-
   private
   
   def generate_token column
