@@ -11,24 +11,26 @@
       %nav
         %h1= link_to "Couchkissen", root_path
         .btn-grp
-          = link_to "", events_path, class: "btn", data: { icon: "\ue000" }, title: "Events"
-          = link_to "", events_archive_path, class: "btn", data: { icon: "\ue001" }, title: "Vergangene Events"
-          = link_to "", new_event_path, class: "btn", data: { icon: "\ue00b" }, title: "Neues Event"
+          = link_to "", events_path, class: "btn", data: { icon: "\ue001" }, title: "Events"
+          = link_to "", events_archive_path, class: "btn", data: { icon: "\ue002" }, title: "Vergangene Events"
+          = link_to "", new_event_path, class: "btn", data: { icon: "\ue000" }, title: "Neues Event"
         .btn-grp
-          = link_to "", forums_path, class: "btn", data: { icon: "\ue002" }, title: "Forum"
-          = link_to "", new_forum_path, class: "btn", data: { icon: "\ue00b" }, title: "Neues Thema"
+          = link_to "", forums_path, class: "btn", data: { icon: "\ue003" }, title: "Forum"
+          = link_to "", new_forum_path, class: "btn", data: { icon: "\ue000" }, title: "Neues Thema"
         .btn-grp
-          = link_to "", movies_path, class: "btn", data: { icon: "\ue003" }, title: "Filme"
-          = link_to "", new_movie_path, class: "btn", data: { icon: "\ue00b" }, title: "Neuer Film"
+          = link_to "", movies_path, class: "btn", data: { icon: "\ue004" }, title: "Filme"
+          = link_to "", new_movie_path, class: "btn", data: { icon: "\ue000" }, title: "Neuer Film"
         .btn-grp
-          = link_to "", videos_path, class: "btn", data: { icon: "\ue004" }, title: "Videos"
-          = link_to "", new_video_path, class: "btn", data: { icon: "\ue00b" }, title: "Neues Video"
-        .btn-grp
-          = link_to "", polls_path, class: "btn", data: { icon: "\ue007" }, title: "Abstimmungen"
-          = link_to "", new_poll_path, class: "btn", data: { icon: "\ue00b" }, title: "Neue Abstimmung"
-        .btn-grp
-          = link_to "", users_path, class: "btn", data: { icon: "\ue005" }, title: "Profile"
-          = link_to "", account_path, class: "btn", data: { icon: "\ue006" }, title: "Mein Profil"
-        .btn-single
-          = link_to "", logout_path, class: "btn", data: { icon: "\ue008" }, title: "Abmelden"
+          = link_to "", users_path, class: "btn", data: { icon: "\ue008" }, title: "Profile"
+          = link_to "", account_path, class: "btn", data: { icon: "\ue009" }, title: "Mein Profil"
+          = link_to "", logout_path, class: "btn", data: { icon: "\ue00a" }, title: "Abmelden"
+        .btn-single.pos-rel.dropdown
+          %span.btn{ data: { icon: "\ue00b" } }
+          .sub-nav
+            .btn-grp
+              = link_to "", videos_path, class: "btn", data: { icon: "\ue005" }, title: "Videos"
+              = link_to "", new_video_path, class: "btn", data: { icon: "\ue000" }, title: "Neues Video"
+            .btn-grp
+              = link_to "", polls_path, class: "btn", data: { icon: "\ue006" }, title: "Abstimmungen"
+              = link_to "", new_poll_path, class: "btn", data: { icon: "\ue000" }, title: "Neue Abstimmung"                        
     = yield
