@@ -1,9 +1,9 @@
 class VideosController < ApplicationController
   before_filter :require_login
+  before_filter :check_authorization, only: [:edit, :update, :destroy]
 
   def index
     @videos = Video.order("created_at DESC")
-    @video = Video.new
   end
 
   def new
