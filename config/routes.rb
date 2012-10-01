@@ -13,6 +13,7 @@ Ck::Application.routes.draw do
   resources :pages
   resources :videos
   resources :movies
+  resources :articles
 
   resources :forums do
     resources :posts

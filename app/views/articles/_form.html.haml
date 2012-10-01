@@ -1,0 +1,12 @@
+=form_for @article do |f|
+  - if @article.errors.any?
+    %ul
+      - @article.errors.full_messages.each do |msg|
+        %li= msg
+  .form
+    = f.label :title
+    = f.text_field :title
+    = f.label :content
+    = f.text_area :content, :rows => 20
+    .ta-right
+      = f.submit :class => "button"

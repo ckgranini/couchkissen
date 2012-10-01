@@ -37,6 +37,11 @@ de:
       title: 'Abstimmung bearbeiten'
     new:
       title: 'Abstimmung'
+  articles:
+    edit:
+      title: 'Artikel bearbeiten'
+    new:
+      title: 'Neuer Artikel'
   activerecord:
     models:
       forum: 'Thema'
@@ -44,6 +49,7 @@ de:
       user: 'Profil'
       movie: 'Film'
       poll: 'Abstimmung'
+      article: 'Artikel'
     attributes:
       event:
         title: 'Titel'
@@ -71,6 +77,9 @@ de:
         title: 'Titel'
       selection:
         title: 'Auswahlmöglichkeit'
+      article:
+        title: 'Titel'
+        content: 'Inhalt'
     errors:
       models:
         movie:
