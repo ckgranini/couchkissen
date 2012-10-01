@@ -1,13 +1,12 @@
 %article
   .date
-    %p= l @article.created_at, format: :custom
-  .main.btlr0
+    %p{title: l(@article.created_at)}= @article.title
+  .main.btlr0.article
     %header.no-bs
       %small
         - if authorized?(@article.user)
           = link_to t("links.edit"), edit_article_path(@article)
           %span= "|"
           = link_to t("links.delete"), @article, method: :delete, confirm: t("messages.confirm_delete")
-      %h3= @article.title
     %section
       = markdown(@article.content)

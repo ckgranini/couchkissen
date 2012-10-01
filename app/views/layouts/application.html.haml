@@ -9,7 +9,7 @@
   %body
     #head
       %nav
-        %h1= link_to "Couchkissen", root_path
+        = link_to "Couchkissen", root_path, id: "heading"
         .btn-grp
           = link_to "", events_path, class: "btn", data: { icon: "\ue001" }, title: "Events"
           = link_to "", events_archive_path, class: "btn", data: { icon: "\ue002" }, title: "Vergangene Events"
@@ -31,8 +31,8 @@
               = link_to "", videos_path, class: "btn", data: { icon: "\ue005" }, title: "Videos"
               = link_to "", new_video_path, class: "btn", data: { icon: "\ue000" }, title: "Neues Video"
             .btn-grp
-              = link_to "", articles_path, class: "btn", data: { icon: "\ue002" }, title: "Artikel"
-              = link_to "", new_article_path, class: "btn", data: { icon: "\ue00b" }, title: "Neuer Artikel"
+              = link_to "", articles_path, class: "btn", data: { icon: "\ue007" }, title: "Artikel"
+              = link_to "", new_article_path, class: "btn", data: { icon: "\ue000" }, title: "Neuer Artikel"
             .btn-grp
               = link_to "", polls_path, class: "btn", data: { icon: "\ue006" }, title: "Abstimmungen"
               = link_to "", new_poll_path, class: "btn", data: { icon: "\ue000" }, title: "Neue Abstimmung"                        

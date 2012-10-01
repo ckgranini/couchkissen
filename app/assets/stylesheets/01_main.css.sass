@@ -25,11 +25,13 @@ blockquote
   padding: 8px 0 8px 20px
   p
     color: #111
+    font-style: italic
+    font-size: 13px
 
   &:before
     content: "\201C"
     color: #333
-    font-size: 2em
+    font-size: 1.8em
     line-height: .5em
     margin-right: .3em
     float: left
@@ -37,7 +39,7 @@ blockquote
   &:after
     content: "\201D"
     color: #333
-    font-size: 2em
+    font-size: 1.8em
     line-height: 0
     margin-right: .3em
     vertical-align: -.5em
@@ -45,13 +47,28 @@ blockquote
   & :first-child
     display: inline
 
+pre
+  background-color: #414141
+  border-radius: 3px
+  margin-left: 5px 
+  padding: 2px 5px
+  line-height: 1.6
+  overflow: auto
+
+  code
+    margin: 0
+    padding: 0
+    background-color: transparent
+    white-space: pre
+
+
 code
-  display: block
-  margin: 8px 5px 8px 15px
+  font-size: 12px
+  margin: 0 2px
+  padding: 1px 4px
   color: #e6e6e6
   background-color: #414141
   border-radius: 3px
-  padding: 5px
 
 article, nav
   width: 95%
