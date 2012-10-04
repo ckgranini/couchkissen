@@ -8,6 +8,9 @@ class ArticlesController < ApplicationController
 
   def show
     @article = Article.find(params[:id])
+    @postable = @article
+    @post = Post.new
+    @posts = @article.posts.paginate(:page => params[:page]).order("created_at DESC")
   end
 
   def new

@@ -10,3 +10,7 @@
           = link_to t("links.delete"), @article, method: :delete, confirm: t("messages.confirm_delete")
     %section
       = markdown(@article.content)
+= render "posts/new"
+= render @posts
+%article
+  = will_paginate @posts, :class => 'main ta-center', :inner_window => 3
