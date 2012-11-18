@@ -80,6 +80,7 @@ de:
       article:
         title: 'Titel'
         content: 'Inhalt'
+        disable_posts: 'Beiträge verbieten'
     errors:
       models:
         movie:

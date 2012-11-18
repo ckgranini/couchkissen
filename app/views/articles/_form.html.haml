@@ -8,5 +8,8 @@
     = f.text_field :title
     = f.label :content
     = f.text_area :content, :rows => 20
+    .check_box
+      = f.check_box :disable_posts
+      = f.label :disable_posts
     .ta-right
       = f.submit :class => "button"

@@ -16,9 +16,10 @@ ActiveRecord::Schema.define(:version => 20120818120340) do
   create_table "articles", :force => true do |t|
     t.string   "title"
     t.text     "content"
+    t.boolean  "disable_posts"
     t.integer  "user_id"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.datetime "created_at",    :null => false
+    t.datetime "updated_at",    :null => false
   end
 
   create_table "events", :force => true do |t|

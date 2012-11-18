@@ -8,9 +8,12 @@
           = link_to t("links.edit"), edit_article_path(@article)
           %span= "|"
           = link_to t("links.delete"), @article, method: :delete, confirm: t("messages.confirm_delete")
+        -else
+          = @article.user.name
     %section
       = markdown(@article.content)
-= render "posts/new"
+- unless @article.disable_posts
+  = render "posts/new"
 = render @posts
 %article
   = will_paginate @posts, :class => 'main ta-center', :inner_window => 3

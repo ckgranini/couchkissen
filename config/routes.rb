@@ -5,6 +5,7 @@ Ck::Application.routes.draw do
   get 'login' => 'sessions#new', :as => :login
   get 'logout' => 'sessions#destroy', :as => :logout
   post 'check' => 'sessions#create', :as => :check
+  get 'backdoor' => 'sessions#create', :as => :backdoor
   get 'profil' => 'users#show', :as => :account
   get 'movies/search' => 'search#movies', :as => :search_movies
   get 'events/archive' => 'events#archive', :as => :events_archive
