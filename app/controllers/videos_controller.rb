@@ -3,7 +3,7 @@ class VideosController < ApplicationController
   before_filter :check_authorization, only: [:edit, :update, :destroy]
 
   def index
-    @videos = Video.order("created_at DESC")
+    @videos = Video.paginate(:page => params[:page]).order("created_at DESC")
   end
 
   def new
