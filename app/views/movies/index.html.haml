@@ -3,6 +3,6 @@
   - width = get_width
   .grid.main.ta-center
     - @movies.each do |movie|
-      = link_to image_tag("http://cf2.imgobject.com/t/p/"+ width +"/" + movie.poster_id + ".jpg", alt: "", title: movie.title, class: "thumb_grid"), movie
+      = link_to image_tag("http://d3gtl9l2a4fn1j.cloudfront.net/t/p/"+ width +"/" + movie.poster_id + ".jpg", alt: "", title: movie.title, class: "thumb_grid"), movie
 - else
   = render @movies
