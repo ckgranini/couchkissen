@@ -11,7 +11,7 @@
       %h3= link_to @movie.title, @movie.tmdb_url
     %section.clearfix
       - unless @movie.poster_id.blank?
-        .thumb= link_to image_tag("http://cf2.imgobject.com/t/p/w185/" + @movie.poster_id + ".jpg"), "http://cf2.imgobject.com/t/p/w500/" + @movie.poster_id + ".jpg"
+        .thumb= link_to image_tag("http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w185/" + @movie.poster_id + ".jpg"), "http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/" + @movie.poster_id + ".jpg"
       %p.plot= @movie.plot
       - unless @movie.trailer_url.blank?
         %p= link_to "Trailer", @movie.trailer_url

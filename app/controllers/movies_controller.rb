@@ -22,11 +22,15 @@ class MoviesController < ApplicationController
     @movie = Movie.new(params[:movie])
     movie_feed = get_movie_feed(@movie)
     unless movie_feed[0] == "Nothing Found."
-      @movie.title = movie_feed["name"]
+      @movie.title = movie_feed["title"]
       @movie.plot = movie_feed["overview"]
-      @movie.poster_id = movie_feed["posters"][0]["image"]["url"].match(/(?<=w92\/)(\w*)/).to_s
-      @movie.trailer_url = movie_feed["trailer"]
-      @movie.tmdb_url = movie_feed["url"] + "?language=de"
+      @movie.poster_id = movie_feed["poster_path"].match(/(?<=\/)(\w*)/).to_s
+      unless movie_feed["trailers"]["youtube"].empty?
+        @movie.trailer_url = "http://www.youtube.com/watch?v=" + movie_feed["trailers"]["youtube"][0]["source"]
+      else
+        @movie.trailer_url = ""
+      end
+      @movie.tmdb_url = "http://www.themoviedb.org/movie/" + movie_feed["id"].to_s + "?language=de"
       @movie.tmdb_id = movie_feed["id"]
       @movie.imdb_id = movie_feed["imdb_id"]
     end
@@ -66,7 +70,7 @@ class MoviesController < ApplicationController
   def get_movie_feed(movie)
     require 'open-uri'
     begin  
-      movie_feed = ActiveSupport::JSON.decode(open("http://api.themoviedb.org/2.1/Movie.getInfo/de/json/APIKEY/" + movie.tmdb_id))[0]
+      movie_feed = ActiveSupport::JSON.decode(open("http://api.themoviedb.org/3/movie/" + movie.tmdb_id + "?api_key=APIKEY&language=de&append_to_response=trailers"))
     rescue
       movie_feed = ["Nothing Found."]
     end
