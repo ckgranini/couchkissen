@@ -4,6 +4,5 @@ class PagesController < ApplicationController
   def index
     @events = Event.order("datetime").where("datetime >= ?", Time.now.midnight).limit(2)
     @posts = Post.order("created_at DESC").limit(6)
-    @movies = Movie.order("created_at DESC").limit(4)
   end
 end
